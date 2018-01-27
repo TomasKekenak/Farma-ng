@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Pole } from '../Pole';
 import { Observable } from 'rxjs/Observable';
 import { PoliaService } from './polia.service';
@@ -27,6 +27,8 @@ export class PoliaComponent implements OnInit {
   ngOnInit() {
     this.updatePolia();
   }
+
+  
 
   updatePolia() {
     this.poliaService.getPoliaFromServer().subscribe(polia => {

@@ -4,8 +4,9 @@
 <div *ngIf="stavKomunikacie=='ok'" class="alert alert-success">
   Komunikácia so serverom prebehla v poriadku.
 </div>
+
 <h2>Zoznam polí</h2>
-<table class="table table-hover">
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>Id</th>
@@ -31,6 +32,5 @@
 
 <!-- <p *ngIf="selectedPole">Vybrate pole: {{selectedPole.cisloParcely}}</p> -->
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" 
- data-target="#poleEditModal" (click)="pridajButton()">Pridaj pole</button>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#poleEditModal" (click)="pridajButton()">Pridaj pole</button>
 <app-pole-edit (eventEmiter)="poleEditEventHandler($event)" [pole]="selectedPole" [actionWithPole]="actionWithPole"></app-pole-edit>

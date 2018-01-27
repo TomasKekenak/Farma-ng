@@ -15,6 +15,8 @@ export class PoleEditComponent implements OnChanges {
   @Input() public pole: Pole = new Pole(0, "", "", 0, "", "");
   @Input() public actionWithPole: string='add';
 
+  
+
   constructor() {
     //this.actionWithPole = actionWithPole;
   }
