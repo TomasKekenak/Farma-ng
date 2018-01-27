@@ -1,0 +1,36 @@
+<div *ngIf="stavKomunikacie=='error'" class="alert alert-danger">
+  Komunikácia so serverom sa nepodarila.
+</div>
+<div *ngIf="stavKomunikacie=='ok'" class="alert alert-success">
+  Komunikácia so serverom prebehla v poriadku.
+</div>
+<h2>Zoznam polí</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Typ parcely</th>
+      <th>Číslo parcely</th>
+      <th>Výmera</th>
+      <th>Typ pozemku</th>
+      <th>Vlastníctvo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pole of polia" (click)="select(pole)" (dblclick)="editPoleClick(pole)">
+      <td>{{pole.id}}</td>
+      <td>{{pole.typParcely}}</td>
+      <td>{{pole.cisloParcely}}</td>
+      <td>{{pole.vymera}}</td>
+      <td>{{pole.typPozemku}}</td>
+      <td>{{pole.vlastnictvo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- <p *ngIf="selectedPole">Vybrate pole: {{selectedPole.cisloParcely}}</p> -->
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info" data-toggle="modal" 
+ data-target="#poleEditModal" (click)="pridajButton()">Pridaj pole</button>
+<app-pole-edit (eventEmiter)="poleEditEventHandler($event)" [pole]="selectedPole" [actionWithPole]="actionWithPole"></app-pole-edit>
