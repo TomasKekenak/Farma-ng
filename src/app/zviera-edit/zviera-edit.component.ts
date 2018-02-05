@@ -19,6 +19,22 @@ export class ZvieraEditComponent implements OnChanges {
 
   constructor() { }
 
+  public fdatumNarodeniaChanged($event) {
+    this.zviera.datumNarodenia = [
+      1 * $event.substring(6),
+      1 * $event.substring(3, 5),
+      1 * $event.substring(0, 2)
+    ];
+  }
+
+  public fdatumNadobudnutiaChanged($event) {
+    this.zviera.datumNadobudnutia = [
+      1 * $event.substring(6),
+      1 * $event.substring(3, 5),
+      1 * $event.substring(0, 2)
+    ];
+  }
+
   ngOnChanges() {
 
   }
@@ -39,7 +55,7 @@ export class ZvieraEditComponent implements OnChanges {
     return JSON.stringify(this.zviera);
   }
 
-  registracneCisloSaMeni(event: any) {
+  /*registracneCisloSaMeni(event: any) {
     this.zviera.registracneCislo = event.target.value;
   }
 
@@ -69,11 +85,10 @@ export class ZvieraEditComponent implements OnChanges {
     this.zviera.fdatumNadobudnutia = event.target.value;
     this.zviera.datumNadobudnutia = "[" + this.zviera.fdatumNadobudnutia.substring(6) + ","
       + this.zviera.fdatumNadobudnutia.substring(3, 5) + "," + this.zviera.fdatumNadobudnutia.substring(0, 2) + "]";
-  }
+  }*/
 
   odoslatZviera() {
     this.eventEmiter.emit(this.zviera);
     $('#zvieraPoleModal').modal('hide');
-    window.location.reload(true);
   }
 }

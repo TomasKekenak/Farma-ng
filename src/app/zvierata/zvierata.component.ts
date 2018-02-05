@@ -45,22 +45,18 @@ export class ZvierataComponent implements OnInit {
 
 
   select(zviera) {
-    
     this.selectedZviera = zviera;
   }
 
   zvieraEditEventHandler(zviera: Zviera) {
     if (this.actionWithZviera == "add") {
       this.stavKomunikacie = null;
-      /* zviera.datumNarodenia = zviera.fdatumNarodenia.substring(6) + ","
-        + zviera.fdatumNarodenia.substring(3, 5) + "," + zviera.fdatumNarodenia.substring(0, 2);
-      zviera.datumNadobudnutia = zviera.fdatumNadobudnutia.substring(6) + ","
-        + zviera.fdatumNadobudnutia.substring(3, 5) + "," + zviera.fdatumNadobudnutia.substring(0, 2);*/
-        
-
+     
       this.zvierataService.addZviera(zviera).subscribe(_ => {
+        this.ngOnInit();
+        $('#zvieraEditModal').modal('toggle');
         this.stavKomunikacie = 'ok';
-      },
+},
         error => {
           console.log("Nastala chyba: " + JSON.stringify(error));
           this.stavKomunikacie = 'error';
@@ -69,6 +65,8 @@ export class ZvierataComponent implements OnInit {
     if (this.actionWithZviera == "edit") {
       this.stavKomunikacie = null;
       this.zvierataService.addZviera(zviera).subscribe(_ => {
+        this.ngOnInit();
+        $('#zvieraEditModal').modal('toggle');
         this.stavKomunikacie = 'ok';
       },
         error => {

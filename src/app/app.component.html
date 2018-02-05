@@ -1,91 +1,25 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-
-<p>
-  <app-polia>Polia</app-polia>
-</p>
-<p>
-  <app-zvierata>Zvierata</app-zvierata>
-</p>
-
-<!-- 
-<div class="container"> 
+<div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3>Zvolte požadovanú entitu</h3>
+        <h1 style="font-size:80px;text-align:center;margin-bottom:40px">
+            {{ title }}
+          </h1>
 
-      <div class="tabbable-panel">
-        <div class="tabbable-line">
-          <ul class="nav nav-tabs " (click)="select(pole)">
-            <li>
-              <a href="#tab_default_1" data-toggle="tab">
-                Polia </a>
-            </li>
-            <li>
-              <a href="#tab_default_2" data-toggle="tab">
-                Zvieratá </a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane" id="tab_default_1">
-              <p>
-                <app-polia>Polia</app-polia>
-              </p>
-            </div>
-            <div class="tab-pane" id="tab_default_2">
-              <p>
-                Howdy, I'm in Tab 2.
-              </p>
-            </div>
-          </div>
+      <h3>Nejaky text o appke</h3>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="pole-tab" data-toggle="tab" href="#pole" role="tab" aria-controls="pole" aria-selected="true">Pole</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="zviera-tab" data-toggle="tab" href="#zviera" role="tab" aria-controls="zviera" aria-selected="false">Zvierata</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="pole" role="tabpanel" aria-labelledby="pole-tab">
+          <app-polia>Polia</app-polia>
+        </div>
+        <div class="tab-pane fade" id="zviera" role="tabpanel" aria-labelledby="zviera-tab">
+          <app-zvierata>Zvieratá</app-zvierata>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-
-  <div class="container">
-    <h2>Zvolte požadovanú entitu</h2>
-    <ul class="nav nav-tabs">
-      <li>
-        <a data-toggle="tab" href="#home">Polia</a>
-      </li>
-      <li>
-        <a data-toggle="tab" href="#menu1">Zvieratá</a>
-      </li>
-    </ul>
-
-    <div class="tab-content">
-      <div id="home" class="tab-pane fade">
-        <p>
-          <app-polia>Polia</app-polia>
-        </p>
-      </div>
-      <div id="menu1" class="tab-pane fade">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-  </div>
-
-</body>
-
--->

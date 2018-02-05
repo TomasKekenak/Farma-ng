@@ -1,62 +1,57 @@
 <form (ngSubmit)="odoslatPole()" #poleForm="ngForm" *ngIf="pole">
-    <!-- Modal -->
-    <div id="poleEditModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-  
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">{{nazovModalnehoOkna}}</h4>
+  <!-- Modal -->
+  <div id="poleEditModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{nazovModalnehoOkna}}</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Číslo parcely:</label>
+            <input type="text" class="form-control" [(ngModel)]="pole.cisloParcely" name="cisloParcely" required #validne="ngModel" />
+            <div [hidden]="validne.valid || validne.pristine" class="alert alert-danger">Cislo parcely nemôže byť prázdne.</div>
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label>Číslo parcely:</label>
-              <input type="text" class="form-control" [(ngModel)]="pole.cisloParcely" name="cisloParcely" required #validne="ngModel" />
-              <div [hidden]="validne.valid || validne.pristine" class="alert alert-danger">Cislo parcely nemôže byť prázdne.</div>
-            </div>
-            <!-- <div class="form-group">
+          <!-- <div class="form-group">
               <label>Typ parcely:</label>
               <input type="text" class="form-control" [(ngModel)]="pole.typParcely" name="Typ parcely" />
             </div> -->
-  
-            <label>Typ parcely:</label>
-            <select class="custom-select"  title="Vyberte možnosť" [(ngModel)]="pole.typParcely" name="Typ parcely">
-                <option value="E">E</option>
-                <option value="C">C</option>
-            </select>
-            <p></p>
-            <div class="form-group">
-              <label>Výmera:</label>
-              <input type="number" class="form-control" [(ngModel)]="pole.vymera" name="Vymera" />
-            </div>
-            <div class="form-group">
-              <label>Typ pozemku:</label>
-              <input type="text" class="form-control" [(ngModel)]="pole.typPozemku" name="Typ pozemku" />
-            </div>
-            <!-- <div class="form-group">
+
+          <label>Typ parcely:</label>
+          <select class="custom-select" title="Vyberte možnosť" [(ngModel)]="pole.typParcely" name="Typ parcely">
+            <option value="E">E</option>
+            <option value="C">C</option>
+          </select>
+          <p></p>
+          <div class="form-group">
+            <label>Výmera:</label>
+            <input type="number" class="form-control" [(ngModel)]="pole.vymera" name="Vymera" />
+          </div>
+          <div class="form-group">
+            <label>Typ pozemku:</label>
+            <input type="text" class="form-control" [(ngModel)]="pole.typPozemku" name="Typ pozemku" />
+          </div>
+          <!-- <div class="form-group">
               <label>Vlastníctvo:</label>
               <input type="text" class="form-control" [(ngModel)]="pole.vlastnictvo" name="Vlastnictvo" />
             </div> -->
-            <label>Vlastníctvo:</label>
-            <select class="custom-select"  title="Vyberte možnosť" [(ngModel)]="pole.vlastnictvo" name="Vlastnictvo">
-                <option value="vlastnik">vlastník</option>
-                <option value="najomca">nájomca</option>
-                <option value="ine">iné</option>
-            </select>
-            <p></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Zrusiť</button>
-            <button type="submit" class="btn btn-primary" [disabled]="!poleForm.form.valid">Uložiť</button>
-          </div>
+          <label>Vlastníctvo:</label>
+          <select class="custom-select" title="Vyberte možnosť" [(ngModel)]="pole.vlastnictvo" name="Vlastnictvo">
+            <option value="vlastnik">vlastník</option>
+            <option value="najomca">nájomca</option>
+            <option value="ine">iné</option>
+          </select>
+          <p></p>
         </div>
-  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Zrusiť</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!poleForm.form.valid">Uložiť</button>
+        </div>
       </div>
+
     </div>
-  </form>
-  
-  
-  
-
-
+  </div>
+</form>

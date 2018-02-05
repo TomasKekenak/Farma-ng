@@ -37,7 +37,7 @@ export class PoleEditComponent implements OnChanges {
     return JSON.stringify(this.pole);
   }
 
-  typParcelySaMeni(event: any) {
+  /* typParcelySaMeni(event: any) {
     this.pole.typParcely = event.target.value;
   }
 
@@ -55,7 +55,7 @@ export class PoleEditComponent implements OnChanges {
 
   vlastnictvoSaMeni(event: any) {
     this.pole.vlastnictvo = event.target.value;
-  }
+  }*/
 
   odoslatPole() {
     this.eventEmiter.emit(this.pole);
