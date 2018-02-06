@@ -53,6 +53,7 @@ export class PoliaComponent implements OnInit {
     if (this.actionWithPole == "add") {
       this.stavKomunikacie = null;
       this.poliaService.addPole(pole).subscribe(_ => {
+        this.ngOnInit();
         this.stavKomunikacie = 'ok';
       },
         error => {
@@ -63,6 +64,7 @@ export class PoliaComponent implements OnInit {
     if (this.actionWithPole == "edit") {
       this.stavKomunikacie = null;
       this.poliaService.addPole(pole).subscribe(_ => {
+        this.ngOnInit();
         this.stavKomunikacie = 'ok';
       },
         error => {

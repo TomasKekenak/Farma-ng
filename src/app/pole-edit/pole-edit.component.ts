@@ -37,29 +37,10 @@ export class PoleEditComponent implements OnChanges {
     return JSON.stringify(this.pole);
   }
 
-  /* typParcelySaMeni(event: any) {
-    this.pole.typParcely = event.target.value;
-  }
-
-  cisloParcelySaMeni(event: any) {
-    this.pole.cisloParcely = event.target.value;
-  }
-
-  typPozemkuSaMeni(event: any) {
-    this.pole.typPozemku = event.target.value;
-  }
-
-  vymeraSaMeni(event: any) {
-    this.pole.vymera = event.target.value;
-  }
-
-  vlastnictvoSaMeni(event: any) {
-    this.pole.vlastnictvo = event.target.value;
-  }*/
 
   odoslatPole() {
     this.eventEmiter.emit(this.pole);
-    $('#userPoleModal').modal('hide');
-    window.location.reload(true);
+    $('#poleEditModal').modal('hide');
+    //window.location.reload(true);
   }
 }
